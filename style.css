@@ -1,0 +1,37 @@
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%}
+body{min-height:100vh;overflow-x:hidden;background:radial-gradient(circle at 50% 15%,rgba(255,255,255,.055),transparent 32%),#080a0d;color:#fff;font-family:"Outfit",Arial,sans-serif}
+#glitter-background{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.glitter{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;opacity:.15;animation:twinkle var(--duration) ease-in-out infinite alternate}
+.glitter.gold{background:#ffd43b;box-shadow:0 0 7px #ffd43b,0 0 15px rgba(255,212,59,.45)}
+.spark{position:absolute;width:3px;height:18px;border-radius:10px;background:rgba(255,255,255,.75);opacity:.2;transform:rotate(45deg);animation:spark var(--duration) ease-in-out infinite alternate}
+.spark:after{content:"";position:absolute;width:18px;height:3px;left:-7px;top:7px;border-radius:10px;background:inherit}
+@keyframes twinkle{from{opacity:.04;transform:scale(.5)}to{opacity:.9;transform:scale(1.3)}}
+@keyframes spark{from{opacity:.04;transform:scale(.5) rotate(45deg)}to{opacity:1;transform:scale(1.15) rotate(45deg)}}
+.page{position:relative;z-index:1;width:100%;max-width:560px;min-height:100vh;margin:auto;padding:38px 20px 50px;text-align:center}
+.live-badge{display:inline-flex;align-items:center;gap:9px;padding:8px 18px;margin-bottom:28px;border:1px solid rgba(255,255,255,.15);border-radius:100px;background:rgba(25,27,30,.9);font-size:13px;font-weight:700;letter-spacing:.08em}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#19d878;box-shadow:0 0 12px rgba(25,216,120,.8);animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.3;transform:scale(.7)}}
+.profile-wrap{position:relative;width:220px;height:220px;margin:auto}
+.image-glow{position:absolute;inset:-15px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.16),transparent 68%);filter:blur(8px)}
+.profile-wrap:before{content:"";position:absolute;inset:-7px;border-radius:50%;background:linear-gradient(145deg,#65676b,#292c30 50%,#55585d);box-shadow:0 0 35px rgba(255,255,255,.12)}
+.profile-image{position:relative;z-index:2;width:100%;height:100%;display:block;object-fit:cover;border-radius:50%;border:5px solid #181a1d}
+.brand{margin-top:30px}
+.brand h1{color:#e8e9eb;font-size:clamp(40px,10vw,62px);line-height:.94;font-weight:900;font-style:italic;letter-spacing:.06em;text-transform:uppercase}
+.crown{display:inline-block;color:#ffd43b;font-size:.62em;font-style:normal;filter:drop-shadow(0 0 8px rgba(255,212,59,.85));animation:crownFloat 2.2s ease-in-out infinite}
+@keyframes crownFloat{50%{transform:translateY(-4px) rotate(2deg)}}
+.brand p{margin-top:17px;color:#c6c8cc;font-size:18px;font-weight:600}
+.divider{width:70px;height:4px;margin:43px auto 45px;border-radius:10px;background:linear-gradient(90deg,transparent,#92969c,transparent)}
+.join-button{display:flex;align-items:center;justify-content:center;width:100%;min-height:78px;padding:18px 25px;border:1px solid rgba(255,255,255,.18);border-radius:19px;background:linear-gradient(145deg,#292a2d,#17181a);color:#fff;text-decoration:none;font-size:25px;font-weight:800;letter-spacing:.04em;transition:.2s}
+.join-button:hover{transform:translateY(-3px);border-color:rgba(255,212,59,.65);box-shadow:0 17px 40px rgba(0,0,0,.45),0 0 30px rgba(255,212,59,.14)}
+.timer-card{margin-top:23px;padding:26px 20px 23px;border:1px solid rgba(255,255,255,.1);border-radius:25px;background:linear-gradient(145deg,rgba(37,38,41,.94),rgba(27,28,30,.94));box-shadow:0 15px 38px rgba(0,0,0,.34)}
+.timer-card>span{display:block;color:#adb2ba;font-size:15px;font-weight:800;letter-spacing:.09em}
+.timer{margin-top:10px;font-size:43px;line-height:1;font-weight:900}
+.timer-card p{margin-top:12px;color:#d0d2d6;font-size:16px}
+.stats{display:grid;grid-template-columns:1fr 1px 1fr 1px 1fr;align-items:center;margin-top:54px}
+.stats strong{display:block;color:#c2c5ca;font-size:27px}
+.stats span{display:block;margin-top:8px;color:#858a91;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.stats i{width:1px;height:50px;background:rgba(255,255,255,.14)}
+footer{margin-top:56px;color:#85898f;font-size:13px;line-height:1.8}
+footer p:last-child{color:#b8bbc0}
+@media(max-width:480px){.page{padding:35px 17px 45px}.profile-wrap{width:185px;height:185px}.brand h1{font-size:40px}.brand p{font-size:15px}.join-button{min-height:74px;font-size:22px}.timer{font-size:39px}.stats strong{font-size:22px}.stats span{font-size:9px}}
